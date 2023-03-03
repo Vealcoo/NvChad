@@ -89,4 +89,19 @@ M.go = {
   },
 }
 
+M.dap = {
+  n = {
+    ["<Leader>bp"] = { "<cmd> lua require'dap'.toggle_breakpoint() <CR>", "dap setting breakpoints" },
+    ["<Leader>\\c"] = { "<cmd> lua require'dap'.continue() <CR>", "dap continue" },
+    ["<Leader>\\i"] = { "<cmd> lua require'dap'.step_into() <CR>", "dap step into" },
+    ["<Leader>\\o"] = { "<cmd> lua require'dap'.step_over() <CR>", "dap step over" },
+  },
+}
+
+M.dapui = {
+  n = {
+    ["dui"] = { "<cmd> lua require'dapui'.toggle() <CR>", "dapui toggle" },
+  },
+}
+
 return M
