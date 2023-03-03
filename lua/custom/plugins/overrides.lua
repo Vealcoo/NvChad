@@ -24,6 +24,7 @@ M.treesitter = {
 M.nvimtree = {
   git = {
     enable = true,
+    timeout = 1000,
   },
 
   renderer = {
