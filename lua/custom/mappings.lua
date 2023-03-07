@@ -4,6 +4,8 @@ M.general = {
   n = {
     [";"] = { ":", "command mode", opts = { nowait = true } },
     ["<leader>nt"] = { "<cmd> tabnew <CR>", "open new tab" },
+    ["]"] = { "<C-w>w", "next window" },
+    ["["] = { "<C-w>W", "previous window" },
   },
 
   i = {
@@ -86,6 +88,8 @@ M.symbol_outline = {
 M.go = {
   n = {
     ["test"] = { "<cmd> GoTestFile -v -F <CR>", "go test file" },
+    ["gatag"] = { "<cmd> GoAddTest <CR>", "go add test" },
+    ["gatest"] = { "<cmd> GoAddTag <CR>", "go add tag" },
   },
 }
 
@@ -101,6 +105,16 @@ M.dap = {
 M.dapui = {
   n = {
     ["dui"] = { "<cmd> lua require'dapui'.toggle() <CR>", "dapui toggle" },
+  },
+}
+
+M.hop = {
+  n = {
+    ["<Leader>w"] = { "<cmd> HopAnywhere <CR>", "hop any where" },
+  },
+
+  i = {
+    ["ww"] = { "<cmd> HopWord <CR>", "hop any where" },
   },
 }
 
