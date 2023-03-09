@@ -28,16 +28,19 @@ return {
   ["williamboman/mason.nvim"] = { override_options = overrides.mason },
   ["lewis6991/gitsigns.nvim"] = { override_options = overrides.gitsigns },
 
-  -- ["NvChad/ui"] = {
-  --   override_options = {
-  --     statusline = {
-  --       -- separater_style = 'round'
-  --       separator_style = "round", -- default/round/block/arrow
-  --
-  --       -- separator_style = "arrow",
-  --     },
-  --   },
-  -- },
+  ["NvChad/ui"] = {
+    override_options = {
+      statusline = {
+        separator_style = "round", -- default/round/block/arrow
+      },
+      tabufline = {
+        lazyload = false, -- to show tabufline by default
+        overriden_modules = function()
+          return require "custom.plugins.tabufline"
+        end,
+      },
+    },
+  },
 
   --------------------------------------------- custom plugins ----------------------------------------------
 
@@ -144,6 +147,9 @@ return {
     config = function()
       require("symbols-outline").setup {
         width = 20,
+        keymaps = {
+          goto_location = { "<CR>", "<2-LeftMouse>" },
+        },
       }
     end,
   },
@@ -168,59 +174,30 @@ return {
     after = "nvim-dap",
     config = function()
       require("dapui").setup {
-        controls = {
-          element = "repl",
-          enabled = true,
-          icons = {
-            disconnect = "",
-            pause = "",
-            play = "",
-            run_last = "",
-            step_back = "",
-            step_into = "",
-            step_out = "",
-            step_over = "",
-            terminate = "",
-          },
-        },
-        element_mappings = {},
-        expand_lines = true,
-        floating = {
-          border = "single",
-          mappings = {
-            close = { "q", "<Esc>" },
-          },
-        },
-        force_buffers = true,
-        icons = {
-          collapsed = "",
-          current_frame = "",
-          expanded = "",
-        },
         layouts = {
           {
-            elements = {
-              {
-                id = "scopes",
-                size = 0.25,
+            {
+              elements = {
+                {
+                  id = "scopes",
+                  size = 0.25,
+                },
+                {
+                  id = "breakpoints",
+                  size = 0.25,
+                },
+                {
+                  id = "stacks",
+                  size = 0.25,
+                },
+                {
+                  id = "watches",
+                  size = 0.25,
+                },
               },
-              {
-                id = "breakpoints",
-                size = 0.25,
-              },
-              {
-                id = "stacks",
-                size = 0.25,
-              },
-              {
-                id = "watches",
-                size = 0.25,
-              },
+              position = "left",
+              size = 30,
             },
-            position = "left",
-            size = 30,
-          },
-          {
             elements = {
               {
                 id = "repl",
@@ -235,18 +212,6 @@ return {
             size = 15,
           },
         },
-        mappings = {
-          edit = "e",
-          expand = { "<CR>", "<2-LeftMouse>" },
-          open = "o",
-          remove = "d",
-          repl = "r",
-          toggle = "t",
-        },
-        render = {
-          indent = 1,
-          max_value_lines = 100,
-        },
       }
     end,
   },
@@ -254,6 +219,14 @@ return {
   ["phaazon/hop.nvim"] = {
     config = function()
       require("hop").setup()
+    end,
+  },
+
+  ["gorbit99/codewindow.nvim"] = {
+    config = function()
+      local codewindow = require "codewindow"
+      codewindow.setup()
+      codewindow.apply_default_keybinds()
     end,
   },
 }

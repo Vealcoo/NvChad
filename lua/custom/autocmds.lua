@@ -38,3 +38,16 @@ autocmd("VimLeavePre", {
     liveReload_xresources()
   end,
 })
+
+-- autocmd("BufWritePre *.go", {
+--   callback = function()
+--     vim.lsp.buf.format { async = true }
+--   end,
+-- })
+
+autocmd("InsertLeave", {
+  callback = function()
+    vim.lsp.buf.format { async = true }
+    vim.cmd "w"
+  end,
+})
