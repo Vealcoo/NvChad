@@ -4,8 +4,8 @@ M.general = {
   n = {
     [";"] = { ":", "command mode", opts = { nowait = true } },
     ["<leader>nt"] = { "<cmd> tabnew <CR>", "open new tab" },
-    ["]"] = { "<C-w>w", "next window" },
-    ["["] = { "<C-w>W", "previous window" },
+    ["]]"] = { "<C-w>w", "next window" },
+    ["[["] = { "<C-w>W", "previous window" },
   },
 
   i = {
