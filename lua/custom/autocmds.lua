@@ -45,6 +45,14 @@ autocmd("BufWritePre *", {
   end,
 })
 
+-- for vim-plug 
+autocmd("VimEnter", {
+  callback = function()
+    vim.cmd "PlugInstall"
+    vim.cmd "q"
+  end,
+})
+
 -- autocmd("InsertLeave", {
 --   callback = function()
 --     vim.lsp.buf.format { async = true }
