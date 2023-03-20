@@ -11,6 +11,7 @@ M.general = {
 
   i = {
     ["jk"] = { "<ESC>", "escape vim" },
+    ["<C-v>"] = { "<ESC>pa", "paste" },
   },
 
   v = {
@@ -21,6 +22,10 @@ M.general = {
   x = {
     ["<C-c>"] = { "y", "copy" },
     ["<C-v>"] = { "p", "paste" },
+  },
+
+  t = {
+    ["<C-v>"] = { "<C-\\><C-n>pa", "paste" },
   },
 }
 
