@@ -93,9 +93,9 @@ M.symbol_outline = {
 
 M.go = {
   n = {
-    ["test"] = { "<cmd> GoTestFile -v -F <CR>", "go test file" },
-    ["gatag"] = { "<cmd> GoAddTest <CR>", "go add test" },
-    ["gatest"] = { "<cmd> GoAddTag <CR>", "go add tag" },
+    ["tag"] = { "<cmd> GoAddTest <CR>", "go add test" },
+    ["test"] = { "<cmd> GoAddTag <CR>", "go add tag" },
+    ["<Leader>//"] = { "<cmd> GoTestFunc -s <CR>", "(go) select the test function you want to run" },
   },
 }
 
@@ -121,6 +121,12 @@ M.hop = {
 
   i = {
     ["ww"] = { "<cmd> HopWord <CR>", "hop any where" },
+  },
+}
+
+M.lazygit = {
+  n = {
+    ["<Leader>git"] = { "<cmd> LazyGit <CR>", "hop any where" },
   },
 }
 
