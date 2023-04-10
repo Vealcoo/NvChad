@@ -185,6 +185,12 @@ local plugins = {
     end,
   },
 
+  {
+    -- this plugin needs to setup by self
+    "iamcco/markdown-preview.nvim",
+    lazy = false,
+  },
+
   -- {
   --   "jeniasaigak/goplay.nvim",
   --   lazy = false,
