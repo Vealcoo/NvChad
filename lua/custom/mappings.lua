@@ -91,14 +91,6 @@ M.symbol_outline = {
   },
 }
 
-M.go = {
-  n = {
-    ["tag"] = { "<cmd> GoAddTest <CR>", "go add test" },
-    ["test"] = { "<cmd> GoAddTag <CR>", "go add tag" },
-    ["<Leader>//"] = { "<cmd> GoTestFunc -s <CR>", "(go) select the test function you want to run" },
-  },
-}
-
 M.dap = {
   n = {
     ["<Leader>bp"] = { "<cmd> lua require'dap'.toggle_breakpoint() <CR>", "dap setting breakpoints" },
@@ -127,6 +119,12 @@ M.hop = {
 M.lazygit = {
   n = {
     ["<Leader>git"] = { "<cmd> LazyGit <CR>", "hop any where" },
+  },
+}
+
+M.neotest = {
+  n = {
+    ["test"] = { "<cmd> lua require('neotest').run.run() <CR>", "run single test"}
   },
 }
 

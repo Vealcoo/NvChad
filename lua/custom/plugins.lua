@@ -191,6 +191,31 @@ local plugins = {
     lazy = false,
   },
 
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+
+      -- adapters
+      "nvim-neotest/neotest-go",
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-go")({
+            -- experimental = {
+            --   test_table = true,
+            -- },
+            args = { "-count=1", "-timeout=60s" }
+          }),
+          require("neotest-plenary"),
+        },
+      })
+    end,
+  },
+
   -- {
   --   "jeniasaigak/goplay.nvim",
   --   lazy = false,
