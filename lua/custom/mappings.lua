@@ -122,9 +122,9 @@ M.lazygit = {
   },
 }
 
-M.neotest = {
+M.nvimtest = {
   n = {
-    ["test"] = { "<cmd> lua require('neotest').run.run() <CR>", "run single test"}
+    ["test"] = { "<cmd> TestNearest <CR>", "run single test" },
   },
 }
 

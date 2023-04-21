@@ -191,28 +191,45 @@ local plugins = {
     lazy = false,
   },
 
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
+  -- {
+  --   "nvim-neotest/neotest",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "antoinemadec/FixCursorHold.nvim",
+  --
+  --     -- adapters
+  --     "nvim-neotest/neotest-go",
+  --   },
+  --   config = function()
+  --     -- get neotest namespace (api call creates or returns namespace)
+  --     local neotest_ns = vim.api.nvim_create_namespace "neotest"
+  --     vim.diagnostic.config({
+  --       virtual_text = {
+  --         format = function(diagnostic)
+  --           local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+  --           return message
+  --         end,
+  --       },
+  --     }, neotest_ns)
+  --     require("neotest").setup {
+  --       adapters = {
+  --         require "neotest-go" {
+  --           experimental = {
+  --             test_table = true,
+  --           },
+  --           args = { "-count=1", "-timeout=60s" },
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
 
-      -- adapters
-      "nvim-neotest/neotest-go",
-    },
+  {
+    "klen/nvim-test",
+    lazy = false,
     config = function()
-      require("neotest").setup({
-        adapters = {
-          require("neotest-go")({
-            -- experimental = {
-            --   test_table = true,
-            -- },
-            args = { "-count=1", "-timeout=60s" }
-          }),
-          require("neotest-plenary"),
-        },
-      })
+      require("nvim-test").setup()
     end,
   },
 
