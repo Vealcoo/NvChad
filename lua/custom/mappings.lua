@@ -3,7 +3,7 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "command mode", opts = { nowait = true } },
+    [";"] = { "<cmd> FineCmdline <CR>", "cmd line", opts = { nowait = true } },
     ["<leader>nt"] = { "<cmd> tabnew <CR>", "open new tab" },
     ["]]"] = { "<C-w>w", "next window" },
     ["[["] = { "<C-w>W", "previous window" },
@@ -108,7 +108,7 @@ M.dapui = {
 
 M.hop = {
   n = {
-    ["<Leader>w"] = { "<cmd> HopAnywhere <CR>", "hop any where" },
+    ["<Leader>w"] = { "<cmd> HopWord <CR>", "hop any where" },
   },
 
   i = {

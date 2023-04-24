@@ -233,6 +233,13 @@ local plugins = {
     end,
   },
 
+  {
+    "VonHeikemen/fine-cmdline.nvim",
+    lazy = false,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+  },
   -- {
   --   "jeniasaigak/goplay.nvim",
   --   lazy = false,
