@@ -76,6 +76,7 @@ M.nvterm = {
 M.gitsigns = {
   n = {
     ["git"] = { "<cmd> Gitsigns diffthis <CR>", "git diff" },
+    ["\\"] = { "<cmd> Gitsigns toggle_current_line_blame <CR>", "git line blame" },
   },
 }
 
@@ -108,17 +109,17 @@ M.dapui = {
 
 M.hop = {
   n = {
-    ["<Leader>w"] = { "<cmd> HopWord <CR>", "hop any where" },
+    ["<Leader>w"] = { "<cmd> HopWord <CR>", "hop any word" },
   },
 
   i = {
-    ["ww"] = { "<cmd> HopWord <CR>", "hop any where" },
+    ["ww"] = { "<cmd> HopWord <CR>", "hop any word" },
   },
 }
 
 M.lazygit = {
   n = {
-    ["<Leader>git"] = { "<cmd> LazyGit <CR>", "hop any where" },
+    ["<Leader>git"] = { "<cmd> LazyGit <CR>", "lazygit" },
   },
 }
 
