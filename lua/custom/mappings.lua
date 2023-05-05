@@ -7,6 +7,7 @@ M.general = {
     ["<leader>nt"] = { "<cmd> tabnew <CR>", "open new tab" },
     ["<leader>]"] = { "<C-w>w", "next window" },
     ["<leader>["] = { "<C-w>W", "previous window" },
+    ["<leader><leader>"] = { "<cmd> lua require('nvchad_ui.tabufline').closeAllBufs() <CR>", "close all bufs" },
   },
 
   i = {
