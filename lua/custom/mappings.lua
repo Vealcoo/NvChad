@@ -129,6 +129,12 @@ M.nvimtest = {
   },
 }
 
+M.project = {
+  n = {
+    ["dir"] = { "<cmd> Telescope projects <CR>", "telescope projects" },
+  }
+}
+
 -- more keybinds!
 
 return M

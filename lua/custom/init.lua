@@ -14,5 +14,4 @@ vim.filetype.add {
   },
 }
 
-vim.opt.guifont = { "CaskaydiaCove NF", ":h13" }
-vim.opt.encoding = "utf-8"
+vim.opt.guifont = { "CaskaydiaCove NF", ":h11" }
