@@ -277,6 +277,24 @@ local plugins = {
       require("telescope").load_extension "projects"
     end,
   },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    lazy = false,
+    dependencies = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        source_selector = {
+            winbar = true,
+            statusline = true
+        }
+      })
+    end,
+  },
   -- {
   --   "jeniasaigak/goplay.nvim",
   --   lazy = false,

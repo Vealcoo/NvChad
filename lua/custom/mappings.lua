@@ -32,7 +32,7 @@ M.general = {
 
 M.nvimtree = {
   n = {
-    ["ww"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+    ["ww"] = { "<cmd> NeoTreeFocusToggle <CR>", "toggle nvimtree" },
   },
 }
 
