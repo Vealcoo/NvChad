@@ -136,6 +136,12 @@ M.project = {
   }
 }
 
+M.fzf = {
+  n = {
+    ["<Leader>fl"] = { "<cmd> Lines <CR>", "fzf lines" },
+  }
+}
+
 -- more keybinds!
 
 return M
